@@ -1,0 +1,18 @@
+IMPORTANT: Save the Astrologer Photo
+
+To complete the website setup, please save the photo you uploaded as:
+
+Location: astrovidya/images/astrologer.jpg
+
+Steps:
+1. The photo you uploaded needs to be saved in the "images" folder
+2. Name it exactly: astrologer.jpg
+3. Full path should be: /Users/krishnashukla/Desktop/NSE/CascadeProjects/windsurf-project/astrovidya/images/astrologer.jpg
+
+The HTML has already been updated to use this image in:
+- Hero section (right side circle)
+- About section (astrologer profile)
+
+Once you save the image, refresh your browser to see the photo displayed beautifully!
+
+Note: The images folder has already been created.

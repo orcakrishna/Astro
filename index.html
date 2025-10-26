@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroVidya | आकाशीय विद्या - Discover Your Cosmic Path</title>
+    <meta name="description" content="Professional astrology services, Kundali analysis, horoscope readings, and cosmic guidance by experienced astrologer.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-moon"></i>
+                <span class="logo-text">
+                    <span class="logo-en">AstroVidya</span>
+                    <span class="logo-divider">|</span>
+                    <span class="logo-hi">आकाशीय विद्या</span>
+                </span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link" data-en="Home" data-hi="होम">Home</a></li>
+                <li><a href="#zodiac" class="nav-link" data-en="Zodiac" data-hi="राशि">Zodiac</a></li>
+                <li><a href="#services" class="nav-link" data-en="Services" data-hi="सेवाएं">Services</a></li>
+                <li><a href="#aarti" class="nav-link" data-en="Aarti" data-hi="आरती">Aarti</a></li>
+                <li><a href="#about" class="nav-link" data-en="About" data-hi="परिचय">About</a></li>
+                <li><a href="#contact" class="nav-link" data-en="Contact" data-hi="संपर्क">Contact</a></li>
+            </ul>
+            <button class="lang-toggle" id="langToggle">
+                <i class="fas fa-language"></i>
+                <span class="lang-text">हिंदी</span>
+            </button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="stars"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-en="Discover Your Cosmic Path" data-hi="अपना आकाशीय मार्ग खोजें">
+                    Discover Your Cosmic Path
+                </h1>
+                <p class="hero-subtitle" data-en="Ancient Wisdom Meets Modern Insights" data-hi="प्राचीन ज्ञान मिलता है आधुनिक अंतर्दृष्टि">
+                    Ancient Wisdom Meets Modern Insights
+                </p>
+                <div class="hero-poem">
+                    <p class="poem-line" data-en="&quot;As above, so below; as within, so without&quot;" data-hi="&quot;जब कुछ मिटेगा, वही बचेगा,सत्य ही तो एक शेष रहेगा।जो अनादि, अनन्त, अचल, शिव है,वही परम सत्य, वही ब्रह्म है।&quot;">
+                        "As above, so below; as within, so without"
+                    </p>
+                    <p class="poem-author" data-en="- Vidya Charan" data-hi="- विद्या चरण">
+                        - Vidya Charan
+                    </p>
+                </div>
+                <button class="cta-button" onclick="openKundaliModal()">
+                    <i class="fas fa-upload"></i>
+                    <span data-en="Upload Your Kundali" data-hi="अपनी कुंडली अपलोड करें">Upload Your Kundali</span>
+                </button>
+            </div>
+            <div class="hero-image">
+                <div class="astrologer-circle">
+                    <img src="images/astrologer.jpg" alt="Shri Vidya Charan Shukla" class="astrologer-hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zodiac Section -->
+    <section class="zodiac-section" id="zodiac">
+        <div class="container">
+            <h2 class="section-title" data-en="Zodiac Signs" data-hi="राशि चक्र">Zodiac Signs</h2>
+            <p class="section-subtitle" data-en="Explore the cosmic influence of your sun sign" data-hi="अपनी सूर्य राशि के ब्रह्मांडीय प्रभाव का अन्वेषण करें">
+                Explore the cosmic influence of your sun sign
+            </p>
+            <div class="zodiac-grid" id="zodiacGrid">
+                <!-- Zodiac cards will be dynamically generated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2 class="section-title" data-en="Our Services" data-hi="हमारी सेवाएं">Our Services</h2>
+            <p class="section-subtitle" data-en="Personalized astrological guidance for your life journey" data-hi="आपकी जीवन यात्रा के लिए व्यक्तिगत ज्योतिषीय मार्गदर्शन">
+                Personalized astrological guidance for your life journey
+            </p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-scroll"></i></div>
+                    <h3 class="service-title" data-en="Kundali Analysis" data-hi="कुंडली विश्लेषण">Kundali Analysis</h3>
+                    <p class="service-desc" data-en="Comprehensive birth chart reading and planetary analysis" data-hi="व्यापक जन्म कुंडली पठन और ग्रह विश्लेषण">
+                        Comprehensive birth chart reading and planetary analysis
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-heart"></i></div>
+                    <h3 class="service-title" data-en="Marriage Compatibility" data-hi="विवाह अनुकूलता">Marriage Compatibility</h3>
+                    <p class="service-desc" data-en="Detailed compatibility reports for lifelong partnership" data-hi="जीवन भर साझेदारी के लिए विस्तृत अनुकूलता रिपोर्ट">
+                        Detailed compatibility reports for lifelong partnership
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3 class="service-title" data-en="Life Challenges & Remedies" data-hi="जीवन की चुनौतियाँ और उपाय">Life Challenges & Remedies</h3>
+                    <p class="service-desc" data-en="Practical solutions and remedies for obstacles" data-hi="बाधाओं के लिए व्यावहारिक समाधान और उपाय">
+                        Practical solutions and remedies for obstacles
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-satellite"></i></div>
+                    <h3 class="service-title" data-en="Planetary Transits" data-hi="ग्रह संचार">Planetary Transits</h3>
+                    <p class="service-desc" data-en="Current planetary movements and their effects" data-hi="वर्तमान ग्रह गति और उनके प्रभाव">
+                        Current planetary movements and their effects
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-moon"></i></div>
+                    <h3 class="service-title" data-en="Moon Sign Calculator" data-hi="चंद्र राशि कैलकुलेटर">Moon Sign Calculator</h3>
+                    <p class="service-desc" data-en="Discover your emotional nature and inner self" data-hi="अपनी भावनात्मक प्रकृति और आंतरिक स्वभाव खोजें">
+                        Discover your emotional nature and inner self
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3 class="service-title" data-en="Personalized Readings" data-hi="व्यक्तिगत पठन">Personalized Readings</h3>
+                    <p class="service-desc" data-en="One-on-one consultation with experienced astrologer" data-hi="अनुभवी ज्योतिषी के साथ व्यक्तिगत परामर्श">
+                        One-on-one consultation with experienced astrologer
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <h2 class="section-title" data-en="About the Astrologer" data-hi="ज्योतिषी के बारे में">About the Astrologer</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="astrologer-photo">
+                        <img src="images/astrologer.jpg" alt="Shri Vidya Charan Shukla" class="astrologer-about-img">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3 class="about-name" data-en="Shri Vidya Charan Shukla" data-hi="श्री विद्या चरण शुक्ला">Shri Vidya Charan Shukla</h3>
+                    <p class="about-title" data-en="Vedic Astrologer & Spiritual Guide" data-hi="वैदिक ज्योतिषी और आध्यात्मिक मार्गदर्शक">
+                        Vedic Astrologer & Spiritual Guide
+                    </p>
+                    <p class="about-bio" data-en="With over 15 years of experience in Vedic astrology, I have guided thousands of individuals through life's challenges. My approach combines traditional wisdom with modern understanding to provide practical and meaningful insights." data-hi="वैदिक ज्योतिष में 15 से अधिक वर्षों के अनुभव के साथ, मैंने हजारों व्यक्तियों को जीवन की चुनौतियों के माध्यम से मार्गदर्शन किया है। मेरा दृष्टिकोण व्यावहारिक और सार्थक अंतर्दृष्टि प्रदान करने के लिए पारंपरिक ज्ञान को आधुनिक समझ के साथ जोड़ता है।">
+                        With over 15 years of experience in Vedic astrology, I have guided thousands of individuals through life's challenges. My approach combines traditional wisdom with modern understanding to provide practical and meaningful insights.
+                    </p>
+                    <div class="about-credentials">
+                        <div class="credential">
+                            <i class="fas fa-certificate"></i>
+                            <span data-en="Certified Jyotish Acharya" data-hi="प्रमाणित ज्योतिष आचार्य">Certified Jyotish Acharya</span>
+                        </div>
+                        <div class="credential">
+                            <i class="fas fa-award"></i>
+                            <span data-en="15+ Years Experience" data-hi="15+ वर्षों का अनुभव">15+ Years Experience</span>
+                        </div>
+                        <div class="credential">
+                            <i class="fas fa-users"></i>
+                            <span data-en="10,000+ Consultations" data-hi="10,000+ परामर्श">10,000+ Consultations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonials -->
+            <div class="testimonials">
+                <h3 class="testimonials-title" data-en="Client Testimonials" data-hi="ग्राहक समीक्षाएं">Client Testimonials</h3>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div><br><br>
+                        <p class="testimonial-text" data-en="The kundali reading was incredibly accurate and helped me understand my life path better. Highly recommended!" data-hi="कुंडली पठन अविश्वसनीय रूप से सटीक था और मुझे अपने जीवन पथ को बेहतर ढंग से समझने में मदद की। अत्यधिक अनुशंसित!">
+                            "The kundali reading was incredibly accurate and helped me understand my life path better. Highly recommended!"
+                        </p>
+                        <p class="testimonial-author">- Priya Verma, Mumbai</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div><br><br>
+                        <p class="testimonial-text" data-en="Marriage compatibility report was detailed and insightful. It gave us clarity on important matters." data-hi="विवाह अनुकूलता रिपोर्ट विस्तृत और अंतर्दृष्टिपूर्ण थी। इसने हमें महत्वपूर्ण मामलों पर स्पष्टता दी।">
+                            "Marriage compatibility report was detailed and insightful. It gave us clarity on important matters."
+                        </p>
+                        <p class="testimonial-author">- Rahul & Anjali, Delhi</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div><br><br>
+                        <p class="testimonial-text" data-en="Professional service with deep knowledge. The remedies suggested actually worked!" data-hi="गहन ज्ञान के साथ पेशेवर सेवा। सुझाए गए उपाय वास्तव में काम किए!">
+                            "Professional service with deep knowledge. The remedies suggested actually worked!"
+                        </p>
+                        <p class="testimonial-author">- Amit Patel, Ahmedabad</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aarti Sangrah Section -->
+    <section class="aarti-section" id="aarti">
+        <div class="container">
+            <h2 class="section-title" data-en="Aarti Sangrah | आरती संग्रह" data-hi="आरती संग्रह">Aarti Sangrah | आरती संग्रह</h2>
+            <p class="section-subtitle" data-en="Divine prayers and devotional songs" data-hi="दिव्य प्रार्थनाएं और भक्ति गीत">
+                Divine prayers and devotional songs
+            </p>
+            <div class="aarti-grid">
+                <div class="aarti-card" onclick="openAartiModal('ganesh')">
+                    <div class="aarti-icon">🙏</div>
+                    <h3 class="aarti-name" data-en="Ganesh Ji Aarti" data-hi="गणेश जी आरती">Ganesh Ji Aarti</h3>
+                    <p class="aarti-subtitle" data-en="Lord Ganesha" data-hi="भगवान गणेश">Lord Ganesha</p>
+                </div>
+                <div class="aarti-card" onclick="openAartiModal('hanuman')">
+                    <div class="aarti-icon">🕉️</div>
+                    <h3 class="aarti-name" data-en="Hanuman Ji Aarti" data-hi="हनुमान जी आरती">Hanuman Ji Aarti</h3>
+                    <p class="aarti-subtitle" data-en="Lord Hanuman" data-hi="भगवान हनुमान">Lord Hanuman</p>
+                </div>
+                <div class="aarti-card" onclick="openAartiModal('durga')">
+                    <div class="aarti-icon">🔱</div>
+                    <h3 class="aarti-name" data-en="Durga Ji Aarti" data-hi="दुर्गा जी आरती">Durga Ji Aarti</h3>
+                    <p class="aarti-subtitle" data-en="Goddess Durga" data-hi="माँ दुर्गा">Goddess Durga</p>
+                </div>
+                <div class="aarti-card" onclick="openAartiModal('shiv')">
+                    <div class="aarti-icon">🔥</div>
+                    <h3 class="aarti-name" data-en="Shiv Ji Aarti" data-hi="शिव जी आरती">Shiv Ji Aarti</h3>
+                    <p class="aarti-subtitle" data-en="Lord Shiva" data-hi="भगवान शिव">Lord Shiva</p>
+                </div>
+                <div class="aarti-card" onclick="openAartiModal('lakshmi')">
+                    <div class="aarti-icon">💰</div>
+                    <h3 class="aarti-name" data-en="Lakshmi Ji Aarti" data-hi="लक्ष्मी जी आरती">Lakshmi Ji Aarti</h3>
+                    <p class="aarti-subtitle" data-en="Goddess Lakshmi" data-hi="माँ लक्ष्मी">Goddess Lakshmi</p>
+                </div>
+                <div class="aarti-card" onclick="openAartiModal('saraswati')">
+                    <div class="aarti-icon">📖</div>
+                    <h3 class="aarti-name" data-en="Saraswati Ji Aarti" data-hi="सरस्वती जी आरती">Saraswati Ji Aarti</h3>
+                    <p class="aarti-subtitle" data-en="Goddess Saraswati" data-hi="माँ सरस्वती">Goddess Saraswati</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title" data-en="Get in Touch" data-hi="संपर्क करें">Get in Touch</h2>
+            <p class="section-subtitle" data-en="Book your consultation today" data-hi="आज ही अपना परामर्श बुक करें">
+                Book your consultation today
+            </p>
+            
+            <!-- UPI Payment Section -->
+            <div class="payment-section">
+                <h3 class="payment-title" data-en="💳 UPI Payment" data-hi="💳 UPI भुगतान">💳 UPI Payment</h3>
+                <div class="payment-container">
+                    <div class="payment-info">
+                        <div class="upi-id">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div>
+                                <h4 data-en="UPI ID" data-hi="UPI आईडी">UPI ID</h4>
+                                <p class="upi-value">7905521101@paytm</p>
+                                <button class="copy-btn" onclick="copyUPI()">
+                                    <i class="fas fa-copy"></i>
+                                    <span data-en="Copy" data-hi="कॉपी करें">Copy</span>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="payment-note" data-en="Scan QR code or use UPI ID for instant payment" data-hi="त्वरित भुगतान के लिए QR कोड स्कैन करें या UPI आईडी का उपयोग करें">
+                            Scan QR code or use UPI ID for instant payment
+                        </p>
+                    </div>
+                    <div class="qr-code-wrapper">
+                        <div class="qr-placeholder">
+                            <i class="fas fa-qrcode"></i>
+                            <p data-en="QR Code" data-hi="QR कोड">QR Code</p>
+                            <small data-en="(Add your UPI QR code image)" data-hi="(अपना UPI QR कोड छवि जोड़ें)">(Add your UPI QR code image)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4 data-en="Phone" data-hi="फोन">Phone</h4>
+                            <p>+91 7905521101</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4 data-en="Email" data-hi="ईमेल">Email</h4>
+                            <p>astrovidyashukla@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4 data-en="WhatsApp" data-hi="व्हाट्सएप">WhatsApp</h4>
+                            <p>+91 7905521101</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4 data-en="Hours" data-hi="समय">Hours</h4>
+                            <p data-en="Mon-Sat: 9 AM - 6 PM" data-hi="सोम-शनि: 9 AM - 6 PM">Mon-Sat: 9 AM - 6 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                    <!-- Get your free access key from https://web3forms.com -->
+                    <!-- Replace YOUR_ACCESS_KEY_HERE with your actual key -->
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                    <input type="hidden" name="subject" value="New Contact from AstroVidya Website">
+                    <input type="hidden" name="redirect" value="false">
+                    <input type="hidden" name="from_name" value="AstroVidya Website">
+                    <input type="text" id="contactName" name="name" placeholder="Your Name / आपका नाम" required>
+                    <input type="email" id="contactEmail" name="email" placeholder="Your Email / आपका ईमेल" required>
+                    <input type="tel" id="contactPhone" name="phone" placeholder="Your Phone / आपका फोन" required>
+                    <select id="contactServiceSelect" name="service" required>
+                        <option value="" data-en="Select Service" data-hi="सेवा चुनें">Select Service</option>
+                        <option value="kundali" data-en="Kundali" data-hi="कुंडली">Kundali</option>
+                        <option value="marriage" data-en="Marriage" data-hi="विवाह">Marriage</option>
+                        <option value="birth" data-en="Birth Chart" data-hi="जन्म कुंडली">Birth Chart</option>
+                        <option value="job" data-en="Job / Career" data-hi="नौकरी / करियर">Job / Career</option>
+                    </select>
+                    <textarea id="contactMessage" name="message" rows="5" placeholder="Your Message / आपका संदेश" required></textarea>
+                    <button type="submit" class="submit-button">
+                        <i class="fas fa-paper-plane"></i>
+                        <span data-en="Send Message" data-hi="संदेश भेजें">Send Message</span>
+                    </button>
+                    <div id="contactFormMessage" class="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="footer-title">AstroVidya | आकाशीय विद्या</h4>
+                    <p class="footer-text" data-en="Guiding you through the cosmic journey of life" data-hi="जीवन की ब्रह्मांडीय यात्रा में आपका मार्गदर्शन">
+                        Guiding you through the cosmic journey of life
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title" data-en="Quick Links" data-hi="त्वरित लिंक">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home" data-en="Home" data-hi="होम">Home</a></li>
+                        <li><a href="#zodiac" data-en="Zodiac" data-hi="राशि">Zodiac</a></li>
+                        <li><a href="#services" data-en="Services" data-hi="सेवाएं">Services</a></li>
+                        <li><a href="#about" data-en="About" data-hi="परिचय">About</a></li>
+                        <li><a href="#contact" data-en="Contact" data-hi="संपर्क">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title" data-en="Follow Us" data-hi="हमें फॉलो करें">Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AstroVidya. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Zodiac Popup -->
+    <div class="zodiac-popup" id="zodiacPopup">
+        <div class="popup-content">
+            <button class="popup-close" id="popupClose">&times;</button>
+            <div id="popupBody"></div>
+        </div>
+    </div>
+
+    <!-- Kundali Upload Modal -->
+    <div class="kundali-modal" id="kundaliModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h2 class="modal-title" data-en="Upload Your Kundali" data-hi="अपनी कुंडली अपलोड करें">Upload Your Kundali</h2>
+            <p class="modal-subtitle" data-en="Get personalized astrological insights" data-hi="व्यक्तिगत ज्योतिषीय अंतर्दृष्टि प्राप्त करें">Get personalized astrological insights</p>
+            
+            <form class="kundali-form" id="kundaliForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label data-en="Full Name" data-hi="पूरा नाम">Full Name</label>
+                        <input type="text" placeholder="Enter your name / अपना नाम दर्ज करें" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Date of Birth" data-hi="जन्म तिथि">Date of Birth</label>
+                        <input type="date" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label data-en="Time of Birth" data-hi="जन्म समय">Time of Birth</label>
+                        <input type="time" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Place of Birth" data-hi="जन्म स्थान">Place of Birth</label>
+                        <input type="text" placeholder="City, State / शहर, राज्य" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label data-en="Select Service" data-hi="सेवा चुनें">Select Service</label>
+                    <select id="serviceSelect" required>
+                        <option value="" data-en="-- Choose a Service --" data-hi="-- एक सेवा चुनें --">-- Choose a Service --</option>
+                        <option value="kundali" data-en="Kundali Analysis" data-hi="कुंडली विश्लेषण">Kundali Analysis</option>
+                        <option value="marriage" data-en="Marriage Compatibility" data-hi="विवाह अनुकूलता">Marriage Compatibility</option>
+                        <option value="birth" data-en="Birth Chart Reading" data-hi="जन्म कुंडली पठन">Birth Chart Reading</option>
+                        <option value="job" data-en="Job / Career Guidance" data-hi="नौकरी / करियर मार्गदर्शन">Job / Career Guidance</option>
+                        <option value="remedies" data-en="Life Challenges & Remedies" data-hi="जीवन की चुनौतियाँ और उपाय">Life Challenges & Remedies</option>
+                        <option value="transit" data-en="Planetary Transit Analysis" data-hi="ग्रह संचार विश्लेषण">Planetary Transit Analysis</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label data-en="Upload Kundali (Optional)" data-hi="कुंडली अपलोड करें (वैकल्पिक)">Upload Kundali (Optional)</label>
+                    <div class="file-upload-wrapper">
+                        <input type="file" id="kundaliFile" accept=".pdf,.jpg,.jpeg,.png">
+                        <label for="kundaliFile" class="file-upload-btn">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span data-en="Choose File" data-hi="फाइल चुनें">Choose File</span>
+                        </label>
+                        <span class="file-name" data-en="No file chosen" data-hi="कोई फाइल नहीं चुनी गई">No file chosen</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label data-en="Phone Number" data-hi="फोन नंबर">Phone Number</label>
+                    <input type="tel" placeholder="+91 XXXXX XXXXX" required>
+                </div>
+                
+                <div class="form-group">
+                    <label data-en="Email Address" data-hi="ईमेल पता">Email Address</label>
+                    <input type="email" placeholder="your@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label data-en="Additional Information" data-hi="अतिरिक्त जानकारी">Additional Information</label>
+                    <textarea rows="4" placeholder="Any specific questions or concerns / कोई विशिष्ट प्रश्न या चिंता"></textarea>
+                </div>
+                
+                <button type="submit" class="modal-submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    <span data-en="Submit Request" data-hi="अनुरोध जमा करें">Submit Request</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Aarti Modal -->
+    <div class="aarti-modal" id="aartiModal">
+        <div class="aarti-modal-content">
+            <button class="modal-close" id="aartiModalClose">&times;</button>
+            <h2 class="aarti-modal-title" id="aartiTitle"></h2>
+            <div class="aarti-text" id="aartiText"></div>
+        </div>
+    </div>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("YOUR_PUBLIC_KEY"); // Will be replaced with actual key
+        })();
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

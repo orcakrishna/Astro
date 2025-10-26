@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Astrologer Photo - AstroVidya</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a40, #2c2c6b);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #ffd700;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+        .instructions {
+            background: rgba(255, 215, 0, 0.1);
+            border-left: 4px solid #ffd700;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+            border-radius: 10px;
+        }
+        .instructions ol {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+        .instructions li {
+            margin: 10px 0;
+        }
+        .file-input {
+            margin: 30px 0;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .upload-btn {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #1a1a40;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .upload-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+        }
+        .preview {
+            margin: 30px 0;
+            display: none;
+        }
+        .preview img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ffd700;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+        }
+        .save-btn {
+            background: #9966cc;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        .save-btn:hover {
+            background: #ffd700;
+            color: #1a1a40;
+            transform: scale(1.05);
+        }
+        .success {
+            background: rgba(0, 255, 0, 0.2);
+            border: 2px solid #00ff00;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+        }
+        .code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin: 10px 0;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📸 Add Astrologer Photo</h1>
+        <p>Upload the photo of Shri Vidya Charan Shukla</p>
+        
+        <div class="instructions">
+            <h3>📋 Instructions:</h3>
+            <ol>
+                <li>Click "Choose Photo" button below</li>
+                <li>Select the astrologer's photo from your computer</li>
+                <li>Preview will appear</li>
+                <li>Right-click on the preview image</li>
+                <li>Select "Save Image As..."</li>
+                <li>Save as: <strong>astrologer.jpg</strong></li>
+                <li>Location: <strong>images/astrologer.jpg</strong></li>
+            </ol>
+        </div>
+        
+        <div class="file-input">
+            <label for="photoUpload" class="upload-btn">
+                📁 Choose Photo
+            </label>
+            <input type="file" id="photoUpload" accept="image/*">
+        </div>
+        
+        <div class="preview" id="preview">
+            <h3>Preview:</h3>
+            <img id="previewImg" alt="Astrologer Photo Preview">
+            <div style="margin-top: 20px;">
+                <button class="save-btn" onclick="downloadImage()">💾 Download as astrologer.jpg</button>
+                <button class="save-btn" onclick="window.location.href='index.html'">🏠 Go to Website</button>
+            </div>
+        </div>
+        
+        <div class="success" id="success">
+            <h3>✅ Photo Preview Ready!</h3>
+            <p>Click "Download as astrologer.jpg" and save it to:</p>
+            <div class="code">astrovidya/images/astrologer.jpg</div>
+            <p style="margin-top: 15px;">Then refresh your main website to see it!</p>
+        </div>
+    </div>
+    
+    <script>
+        const photoUpload = document.getElementById('photoUpload');
+        const preview = document.getElementById('preview');
+        const previewImg = document.getElementById('previewImg');
+        const success = document.getElementById('success');
+        
+        photoUpload.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    previewImg.src = event.target.result;
+                    preview.style.display = 'block';
+                    success.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        function downloadImage() {
+            const link = document.createElement('a');
+            link.download = 'astrologer.jpg';
+            link.href = previewImg.src;
+            link.click();
+            
+            alert('✅ Photo downloaded! Now save it to:\nastrovidya/images/astrologer.jpg\n\nThen refresh your website!');
+        }
+    </script>
+</body>
+</html>
