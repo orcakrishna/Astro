@@ -56,8 +56,9 @@
                     Ancient Wisdom Meets Modern Insights
                 </p>
                 <div class="hero-poem">
-                    <p class="poem-line" data-en="&quot;As above, so below; as within, so without&quot;" data-hi="&quot;जब कुछ मिटेगा, वही बचेगा,सत्य ही तो एक शेष रहेगा।जो अनादि, अनन्त, अचल, शिव है,वही परम सत्य, वही ब्रह्म है।&quot;">
-                        "As above, so below; as within, so without"
+                    <p class="poem-line" data-en="&quot;As above, so below; as within, so without&quot;" data-hi="&quot;जब सब कुछ नष्ट हो जाएगा, तब केवल सत्य ही शेष रहेगा।
+जो आदि (शुरुआत से पहले) है, अनंत (जिसका अंत नहीं), और अचल (जो कभी बदलता नहीं) है — वही शिव है, वही परम सत्य है, वही ब्रह्म हैजब कुछ मिटेगा, वही बचेगा,सत्य ही तो एक शेष रहेगा।जो अनादि, अनन्त, अचल, शिव है,वही परम सत्य, वही ब्रह्म है।&quot;">
+                        "Everything is perishable; only the Truth — that is, Brahma, Vishnu or Shiva — is eternal."
                     </p>
                     <p class="poem-author" data-en="- Vidya Charan" data-hi="- विद्या चरण">
                         - Vidya Charan
@@ -320,13 +321,12 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-                    <!-- Get your free access key from https://web3forms.com -->
-                    <!-- Replace YOUR_ACCESS_KEY_HERE with your actual key -->
-                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-                    <input type="hidden" name="subject" value="New Contact from AstroVidya Website">
-                    <input type="hidden" name="redirect" value="false">
-                    <input type="hidden" name="from_name" value="AstroVidya Website">
+                <form class="contact-form" id="contactForm" action="https://formsubmit.co/8286c464c74786a7107b4d62d5b03a2a" method="POST" enctype="multipart/form-data">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="New Contact from AstroVidya Website">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="http://localhost:8000/thank-you.html">
                     <input type="text" id="contactName" name="name" placeholder="Your Name / आपका नाम" required>
                     <input type="email" id="contactEmail" name="email" placeholder="Your Email / आपका ईमेल" required>
                     <input type="tel" id="contactPhone" name="phone" placeholder="Your Phone / आपका फोन" required>
@@ -338,6 +338,17 @@
                         <option value="job" data-en="Job / Career" data-hi="नौकरी / करियर">Job / Career</option>
                     </select>
                     <textarea id="contactMessage" name="message" rows="5" placeholder="Your Message / आपका संदेश" required></textarea>
+                    
+                    <!-- File Upload -->
+                    <div class="form-group file-upload">
+                        <label for="attachment" data-en="Attach File (Optional) /" data-hi="फाइल संलग्न करें (वैकल्पिक)">
+                            <i class="fas fa-paperclip"></i>
+                            <span data-en="Attach File (Optional)" data-hi="फाइल संलग्न करें">Attach File (Optional)</span>
+                        </label>
+                        <input type="file" id="attachment" name="attachment" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" data-max-size="10485760">
+                        <small class="file-info" data-en="Max size: 10MB (PDF, JPG, PNG, DOC, DOCX)" data-hi="अधिकतम आकार: 10MB (PDF, JPG, PNG, DOC, DOCX)">Max size: 10MB (PDF, JPG, PNG, DOC, DOCX)</small>
+                    </div>
+                    
                     <button type="submit" class="submit-button">
                         <i class="fas fa-paper-plane"></i>
                         <span data-en="Send Message" data-hi="संदेश भेजें">Send Message</span>
@@ -399,67 +410,73 @@
             <h2 class="modal-title" data-en="Upload Your Kundali" data-hi="अपनी कुंडली अपलोड करें">Upload Your Kundali</h2>
             <p class="modal-subtitle" data-en="Get personalized astrological insights" data-hi="व्यक्तिगत ज्योतिषीय अंतर्दृष्टि प्राप्त करें">Get personalized astrological insights</p>
             
-            <form class="kundali-form" id="kundaliForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label data-en="Full Name" data-hi="पूरा नाम">Full Name</label>
-                        <input type="text" id="fullName" placeholder="Enter your name / अपना नाम दर्ज करें" required>
-                    </div>
-                    <div class="form-group">
-                        <label data-en="Date of Birth" data-hi="जन्म तिथि">Date of Birth</label>
-                        <input type="date" id="birthDate" min="1900-01-01" max="2025-12-31" required>
-                    </div>
+            <form class="kundali-form" id="kundaliForm" action="https://formsubmit.co/8286c464c74786a7107b4d62d5b03a2a" method="POST" enctype="multipart/form-data">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_subject" value="Kundali Upload Request - AstroVidya">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="http://localhost:8000/thank-you.html">
+                
+                <div class="form-group">
+                    <label data-en="Full Name" data-hi="पूरा नाम">Full Name</label>
+                    <input type="text" id="fullName" name="name" placeholder="Enter your name / अपना नाम दर्ज करें" required>
                 </div>
                 
                 <div class="form-row">
                     <div class="form-group">
-                        <label data-en="Time of Birth" data-hi="जन्म समय">Time of Birth</label>
-                        <input type="time" id="birthTime" required>
+                        <label data-en="Date of Birth" data-hi="जन्म तिथि">Date of Birth</label>
+                        <input type="date" id="birthDate" name="birth_date" min="1900-01-01" max="2025-12-31" required>
                     </div>
+                    
                     <div class="form-group">
-                        <label data-en="Place of Birth" data-hi="जन्म स्थान">Place of Birth</label>
-                        <input type="text" id="birthPlace" placeholder="City, State / शहर, राज्य" required>
+                        <label data-en="Time of Birth" data-hi="जन्म समय">Time of Birth</label>
+                        <input type="time" id="birthTime" name="birth_time" required>
                     </div>
                 </div>
                 
                 <div class="form-group">
+                    <label data-en="Place of Birth" data-hi="जन्म स्थान">Place of Birth</label>
+                    <input type="text" id="birthPlace" name="birth_place" placeholder="City, State / शहर, राज्य" required>
+                </div>
+                
+                <div class="form-group">
+                    <label data-en="Phone Number" data-hi="फोन नंबर">Phone Number</label>
+                    <input type="tel" id="userPhone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+                </div>
+                
+                <div class="form-group">
+                    <label data-en="Email Address" data-hi="ईमेल पता">Email Address</label>
+                    <input type="email" id="userEmail" name="email" placeholder="your@email.com" required>
+                </div>
+                
+                <div class="form-group">
                     <label data-en="Select Service" data-hi="सेवा चुनें">Select Service</label>
-                    <select id="serviceSelect" required>
+                    <select id="serviceSelect" name="service" required>
                         <option value="" data-en="-- Choose a Service --" data-hi="-- एक सेवा चुनें --">-- Choose a Service --</option>
                         <option value="kundali" data-en="Kundali Analysis" data-hi="कुंडली विश्लेषण">Kundali Analysis</option>
                         <option value="marriage" data-en="Marriage Compatibility" data-hi="विवाह अनुकूलता">Marriage Compatibility</option>
                         <option value="birth" data-en="Birth Chart Reading" data-hi="जन्म कुंडली पठन">Birth Chart Reading</option>
                         <option value="job" data-en="Job / Career Guidance" data-hi="नौकरी / करियर मार्गदर्शन">Job / Career Guidance</option>
                         <option value="remedies" data-en="Life Challenges & Remedies" data-hi="जीवन की चुनौतियाँ और उपाय">Life Challenges & Remedies</option>
-                        <option value="transit" data-en="Planetary Transit Analysis" data-hi="ग्रह संचार विश्लेषण">Planetary Transit Analysis</option>
                     </select>
                 </div>
                 
                 <div class="form-group">
-                    <label data-en="Upload Kundali (Optional)" data-hi="कुंडली अपलोड करें (वैकल्पिक)">Upload Kundali (Optional)</label>
-                    <div class="file-upload-wrapper">
-                        <input type="file" id="kundaliFile" accept=".pdf,.jpg,.jpeg,.png">
-                        <label for="kundaliFile" class="file-upload-btn">
-                            <i class="fas fa-cloud-upload-alt"></i>
-                            <span data-en="Choose File" data-hi="फाइल चुनें">Choose File</span>
-                        </label>
-                        <span class="file-name" data-en="No file chosen" data-hi="कोई फाइल नहीं चुनी गई">No file chosen</span>
+                    <label data-en="Upload Kundali (PDF, JPG, PNG, max 10MB)" data-hi="कुंडली अपलोड करें (PDF, JPG, PNG, अधिकतम 10MB)">Upload Kundali (PDF, JPG, PNG, max 10MB)</label>
+                    <div class="file-upload-container">
+                        <input type="file" id="kundaliFile" name="attachment" accept=".pdf,.jpg,.jpeg,.png" style="display: none;">
+                        <button type="button" id="uploadButton" class="upload-button">
+                            <i class="fas fa-upload"></i>
+                            <span data-en="Choose File" data-hi="फ़ाइल चुनें">Choose File</span>
+                        </button>
+                        <span id="fileName" class="file-name" data-en="No file chosen" data-hi="कोई फ़ाइल नहीं चुनी गई">No file chosen</span>
                     </div>
-                </div>
-                
-                <div class="form-group">
-                    <label data-en="Phone Number" data-hi="फोन नंबर">Phone Number</label>
-                    <input type="tel" id="userPhone" placeholder="+91 XXXXX XXXXX" required>
-                </div>
-                
-                <div class="form-group">
-                    <label data-en="Email Address" data-hi="ईमेल पता">Email Address</label>
-                    <input type="email" id="userEmail" placeholder="your@email.com" required>
+                    <p class="file-upload-hint" data-en="Supports: PDF, JPG, PNG up to 10MB" data-hi="समर्थित: PDF, JPG, PNG, अधिकतम 10MB">Supports: PDF, JPG, PNG up to 10MB</p>
                 </div>
                 
                 <div class="form-group">
                     <label data-en="Additional Information" data-hi="अतिरिक्त जानकारी">Additional Information</label>
-                    <textarea id="additionalNotes" rows="4" placeholder="Any specific questions or concerns / कोई विशिष्ट प्रश्न या चिंता"></textarea>
+                    <textarea id="additionalNotes" name="notes" rows="4" placeholder="Any specific questions or concerns / कोई विशिष्ट प्रश्न या चिंता"></textarea>
                 </div>
                 
                 <button type="submit" class="modal-submit-btn">
@@ -479,14 +496,6 @@
         </div>
     </div>
 
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function(){
-            emailjs.init("YOUR_PUBLIC_KEY"); // Will be replaced with actual key
-        })();
-    </script>
-    
     <script src="script.js"></script>
 </body>
 </html>

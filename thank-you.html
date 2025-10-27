@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - AstroVidya</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .thank-you-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a40 0%, #2c2c6b 100%);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .thank-you-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            border-radius: 20px;
+            padding: 60px 40px;
+            max-width: 600px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        .success-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: bounce 1s ease infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .thank-you-title {
+            font-size: 2.5rem;
+            color: #FFD700;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+        
+        .thank-you-message {
+            font-size: 1.2rem;
+            color: #fff;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .btn-home {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #1a1a40;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        .btn-home:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.6);
+        }
+        
+        .contact-info {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 215, 0, 0.3);
+            color: #FFD700;
+        }
+        
+        .contact-info p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="thank-you-card">
+            <div class="success-icon">✅</div>
+            <h1 class="thank-you-title">Thank You! | धन्यवाद!</h1>
+            <p class="thank-you-message">
+                Your submission has been received successfully!<br>
+                आपका अनुरोध सफलतापूर्वक प्राप्त हो गया है!
+            </p>
+            <p class="thank-you-message">
+                We will get back to you soon.<br>
+                हम जल्द ही आपसे संपर्क करेंगे।
+            </p>
+            <a href="index.html" class="btn-home">Return to Home | होम पेज पर जाएं</a>
+            
+            <div class="contact-info">
+                <p><strong>For urgent queries:</strong></p>
+                <p>📱 WhatsApp: +91 7905521101</p>
+                <p>📧 Email: astrovidyashukla@gmail.com</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Auto-redirect after 10 seconds
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 10000);
+    </script>
+</body>
+</html>

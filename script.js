@@ -1,80 +1,157 @@
 // Date and Hindu Festival Data
-const hinduFestivals2024_2025 = {
-    '2024-10-26': { en: 'Ahoi Ashtami', hi: 'अहोई अष्टमी' },
-    '2024-10-31': { en: 'Diwali', hi: 'दीपावली' },
-    '2024-11-01': { en: 'Govardhan Puja', hi: 'गोवर्धन पूजा' },
-    '2024-11-02': { en: 'Bhai Dooj', hi: 'भाई दूज' },
-    '2024-11-15': { en: 'Kartik Purnima', hi: 'कार्तिक पूर्णिमा' },
-    '2024-11-15': { en: 'Dev Deepawali', hi: 'देव दीपावली' },
-    '2024-12-23': { en: 'Dhanu Sankranti', hi: 'धनु संक्रांति' },
-    '2025-01-13': { en: 'Lohri', hi: 'लोहड़ी' },
-    '2025-01-14': { en: 'Makar Sankranti', hi: 'मकर संक्रांति' },
-    '2025-01-25': { en: 'Vasant Panchami', hi: 'वसंत पंचमी' },
-    '2025-02-26': { en: 'Maha Shivaratri', hi: 'महाशिवरात्रि' },
-    '2025-03-14': { en: 'Holi', hi: 'होली' },
-    '2025-03-30': { en: 'Ugadi', hi: 'उगादी' },
-    '2025-04-06': { en: 'Ram Navami', hi: 'राम नवमी' },
-    '2025-04-10': { en: 'Mahavir Jayanti', hi: 'महावीर जयंती' },
-    '2025-04-13': { en: 'Baisakhi', hi: 'बैसाखी' },
-    '2025-05-12': { en: 'Buddha Purnima', hi: 'बुद्ध पूर्णिमा' },
-    '2025-06-22': { en: 'Rath Yatra', hi: 'रथ यात्रा' },
-    '2025-08-09': { en: 'Nag Panchami', hi: 'नाग पंचमी' },
-    '2025-08-16': { en: 'Raksha Bandhan', hi: 'रक्षा बंधन' },
-    '2025-08-27': { en: 'Janmashtami', hi: 'जन्माष्टमी' },
-    '2025-09-05': { en: 'Ganesh Chaturthi', hi: 'गणेश चतुर्थी' },
-    '2025-10-02': { en: 'Navratri Begins', hi: 'नवरात्रि प्रारंभ' },
-    '2025-10-11': { en: 'Dussehra', hi: 'दशहरा' },
-    '2025-10-20': { en: 'Karwa Chauth', hi: 'करवा चौथ' }
+const hinduFestivals2025_2026 = {
+    
+    '2025-11-05': { en: 'Kartik Purnima', hi: 'कार्तिक पूर्णिमा' },
+    
+    // December 2025
+    '2025-12-01': { en: 'Geeta Jayanti', hi: 'गीता जयंती' },
+    '2025-12-04': { en: 'Margashirsha Purnima', hi: 'मार्गशीर्ष पूर्णिमा' },
+    
+    // January 2026
+    '2026-01-10': { en: 'Pausha Putrada Ekadashi', hi: 'पौष पुत्रदा एकादशी' },
+    '2026-01-14': { en: 'Makar Sankranti / Pongal', hi: 'मकर संक्रांति / पोंगल' },
+    '2026-01-23': { en: 'Vasant Panchami', hi: 'वसंत पंचमी' },
+    
+    // February 2026
+    '2026-02-01': { en: 'Thaipusam', hi: 'थाईपुसम' },
+    '2026-02-15': { en: 'Maha Shivaratri', hi: 'महाशिवरात्रि' },
+    
+    // March 2026
+    '2026-03-03': { en: 'Holika Dahan', hi: 'होलिका दहन' },
+    '2026-03-04': { en: 'Holi', hi: 'होली' },
+    '2026-03-19': { en: 'Ugadi / Gudi Padwa', hi: 'उगादी / गुड़ी पड़वा' },
+    '2026-03-27': { en: 'Rama Navami', hi: 'राम नवमी' },
+    
+    // April 2026
+    '2026-04-02': { en: 'Hanuman Jayanti', hi: 'हनुमान जयंती' },
+    '2026-04-14': { en: 'Vaisakhi / Tamil New Year', hi: 'वैसाखी / तमिल नववर्ष' },
+    '2026-04-19': { en: 'Akshaya Tritiya', hi: 'अक्षय तृतीया' },
+    
+    // May 2026
+    '2026-05-16': { en: 'Savitri Pooja', hi: 'सावित्री पूजा' },
+    
+    // July 2026
+    '2026-07-16': { en: 'Puri Rath Yatra', hi: 'पुरी रथ यात्रा' },
+    '2026-07-29': { en: 'Guru Purnima', hi: 'गुरु पूर्णिमा' },
+    
+    // August 2026
+    '2026-08-17': { en: 'Nag Panchami', hi: 'नाग पंचमी' },
+    '2026-08-26': { en: 'Onam', hi: 'ओणम' },
+    '2026-08-28': { en: 'Raksha Bandhan', hi: 'रक्षा बंधन' },
+    
+    // September 2026
+    '2026-09-04': { en: 'Krishna Janmashtami', hi: 'कृष्ण जन्माष्टमी' },
+    '2026-09-14': { en: 'Ganesh Chaturthi', hi: 'गणेश चतुर्थी' },
+    
+    // October 2026
+    '2026-10-11': { en: 'Navaratri Begins', hi: 'नवरात्रि प्रारंभ' },
+    '2026-10-20': { en: 'Dussehra', hi: 'दशहरा' },
+    '2026-10-29': { en: 'Karwa Chauth', hi: 'करवा चौथ' },
+    
+    // November 2026
+    '2026-11-08': { en: 'Diwali', hi: 'दीपावली' },
+    '2026-11-11': { en: 'Bhai Dooj', hi: 'भाई दूज' },
+    '2026-11-15': { en: 'Chhath Puja', hi: 'छठ पूजा' },
+    '2026-11-24': { en: 'Kartik Purnima', hi: 'कार्तिक पूर्णिमा' },
+    
+    // December 2026
+    '2026-12-16': { en: 'Dhanu Sankranti', hi: 'धनु संक्रांति' },
+    '2026-12-20': { en: 'Geeta Jayanti', hi: 'गीता जयंती' }
 };
 
 // Function to update date and festival
 function updateDateAndFestival() {
+    console.log('=== updateDateAndFestival called ===');
     const now = new Date();
     const dateElement = document.getElementById('currentDate');
     const festivalElement = document.getElementById('hinduFestival');
     
-    if (!dateElement || !festivalElement) return;
+    console.log('Date element:', dateElement);
+    console.log('Festival element:', festivalElement);
+    
+    if (!dateElement || !festivalElement) {
+        console.error('ERROR: Date or festival element not found!');
+        return;
+    }
     
     // Format date
     const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
     const formattedDate = now.toLocaleDateString('en-US', options);
     dateElement.textContent = formattedDate;
+    dateElement.style.display = 'block';
+    console.log('✅ Date updated:', formattedDate);
     
-    // Check for Hindu festival
-    const dateKey = now.toISOString().split('T')[0]; // Format: YYYY-MM-DD
+    // Check for Hindu festival - get today's date in local timezone
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const dateKey = `${year}-${month}-${day}`;
+    console.log('Looking for festival on:', dateKey);
+    console.log('Available festivals:', Object.keys(hinduFestivals2025_2026));
     
-    if (hinduFestivals2024_2025[dateKey]) {
-        const festival = hinduFestivals2024_2025[dateKey];
+    if (hinduFestivals2025_2026[dateKey]) {
+        const festival = hinduFestivals2025_2026[dateKey];
         const festivalText = currentLang === 'hi' ? festival.hi : festival.en;
-        festivalElement.textContent = festivalText;
+        festivalElement.textContent = `🎉 ${festivalText}`;
         festivalElement.style.display = 'block';
+        festivalElement.style.visibility = 'visible';
+        festivalElement.style.opacity = '1';
+        console.log('✅ TODAY IS FESTIVAL:', festivalText);
     } else {
+        console.log('No festival today, checking upcoming...');
         // Check upcoming festival within 7 days
         const upcomingFestival = findUpcomingFestival(now);
         if (upcomingFestival) {
+            const daysUntil = Math.ceil((upcomingFestival.date - now) / (1000 * 60 * 60 * 24));
             const festivalText = currentLang === 'hi' 
-                ? `आगामी: ${upcomingFestival.festival.hi}` 
-                : `Upcoming: ${upcomingFestival.festival.en}`;
+                ? `आगामी (${daysUntil} दिन): ${upcomingFestival.festival.hi}` 
+                : `Upcoming (${daysUntil} days): ${upcomingFestival.festival.en}`;
             festivalElement.textContent = festivalText;
             festivalElement.style.display = 'block';
+            festivalElement.style.visibility = 'visible';
+            festivalElement.style.opacity = '1';
+            console.log('✅ UPCOMING FESTIVAL:', festivalText, 'in', daysUntil, 'days');
         } else {
-            festivalElement.style.display = 'none';
+            festivalElement.textContent = '🕉️ No upcoming festivals';
+            festivalElement.style.display = 'block';
+            festivalElement.style.visibility = 'visible';
+            festivalElement.style.opacity = '1';
+            console.log('⚠️ No upcoming festivals found in next 14 days');
         }
     }
 }
 
-// Find upcoming festival within 7 days
+// Find upcoming festival within 14 days
 function findUpcomingFestival(currentDate) {
-    const sevenDaysLater = new Date(currentDate);
-    sevenDaysLater.setDate(currentDate.getDate() + 7);
+    const fourteenDaysLater = new Date(currentDate);
+    fourteenDaysLater.setDate(fourteenDaysLater.getDate() + 14);
     
-    for (const [dateStr, festival] of Object.entries(hinduFestivals2024_2025)) {
-        const festivalDate = new Date(dateStr);
-        if (festivalDate > currentDate && festivalDate <= sevenDaysLater) {
-            return { date: festivalDate, festival: festival };
+    // Create copies to avoid modifying the original dates
+    const compareDate = new Date(currentDate);
+    compareDate.setHours(0, 0, 0, 0);
+    
+    const endDate = new Date(fourteenDaysLater);
+    endDate.setHours(23, 59, 59, 999);
+    
+    let nearestFestival = null;
+    let minDiff = Infinity;
+    
+    console.log('Searching for festivals between', compareDate, 'and', endDate);
+    
+    for (const [dateStr, festival] of Object.entries(hinduFestivals2025_2026)) {
+        const festivalDate = new Date(dateStr + 'T00:00:00');
+        
+        if (festivalDate > compareDate && festivalDate <= endDate) {
+            const diff = festivalDate - compareDate;
+            console.log('Found upcoming festival:', dateStr, festival, 'in', Math.ceil(diff / (1000 * 60 * 60 * 24)), 'days');
+            if (diff < minDiff) {
+                minDiff = diff;
+                nearestFestival = { date: festivalDate, festival: festival };
+            }
         }
     }
-    return null;
+    
+    return nearestFestival;
 }
 
 // Zodiac data with English and Hindi content
@@ -286,9 +363,12 @@ const aartiTitle = document.getElementById('aartiTitle');
 const aartiText = document.getElementById('aartiText');
 
 // Initialize
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing...');
     generateZodiacCards();
     initializeEventListeners();
+    initializeModalListeners();
+    handleFileUploads();
     updateDateAndFestival();
     
     // Update date every minute
@@ -392,18 +472,31 @@ function openKundaliModal() {
 
 // Close Kundali Modal
 function closeKundaliModal() {
+    // Reset form and show it again
+    const form = document.getElementById('kundaliForm');
+    if (form) {
+        form.reset();
+        form.style.display = 'block';
+    }
+    
+    // Remove any success messages
+    const successMessage = document.querySelector('.form-success-message');
+    if (successMessage) {
+        successMessage.remove();
+    }
+    
+    // Reset file name display
+    const fileNameDisplay = document.querySelector('.file-name');
+    if (fileNameDisplay) {
+        fileNameDisplay.textContent = currentLang === 'en' ? 'No file chosen' : 'कोई फाइल नहीं चुनी गई';
+    }
+    
+    // Close modal
     kundaliModal.classList.remove('active');
     document.body.style.overflow = 'auto';
 }
 
-// Handle file upload display
-function handleFileUpload() {
-    kundaliFile.addEventListener('change', function(e) {
-        const fileName = e.target.files[0]?.name || (currentLang === 'en' ? 'No file chosen' : 'कोई फाइल नहीं चुनी गई');
-        const fileNameSpan = document.querySelector('.file-name');
-        fileNameSpan.textContent = fileName;
-    });
-}
+// This function is replaced by handleFileUploads() below
 
 // Update service dropdown on language change
 function updateServiceDropdown() {
@@ -444,66 +537,121 @@ function initializeModalListeners() {
         }
     });
     
-    // Handle form submission
-    kundaliForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Get form values
-        const fullName = document.getElementById('fullName').value;
-        const birthDate = document.getElementById('birthDate').value;
-        const birthTime = document.getElementById('birthTime').value;
-        const birthPlace = document.getElementById('birthPlace').value;
-        const service = document.getElementById('serviceSelect').value;
-        const phone = document.getElementById('userPhone').value;
-        const email = document.getElementById('userEmail').value;
-        const notes = document.getElementById('additionalNotes').value;
-        const fileName = document.getElementById('kundaliFile').files[0]?.name || 'No file selected';
-        
-        // Validate birth date
-        const birthDateObj = new Date(birthDate);
-        const minDate = new Date('1900-01-01');
-        const maxDate = new Date('2025-12-31');
-        
-        if (birthDateObj < minDate || birthDateObj > maxDate) {
-            alert(currentLang === 'en' 
-                ? 'Please enter a valid birth date between 1900 and 2025' 
-                : 'कृपया 1900 और 2025 के बीच एक वैध जन्म तिथि दर्ज करें');
-            return;
-        }
-        
-        // Create mailto link with all data
-        const subject = encodeURIComponent('Kundali Upload Request - AstroVidya');
-        const body = encodeURIComponent(
-            `KUNDALI UPLOAD REQUEST\n\n` +
-            `Full Name: ${fullName}\n` +
-            `Date of Birth: ${birthDate}\n` +
-            `Time of Birth: ${birthTime}\n` +
-            `Place of Birth: ${birthPlace}\n` +
-            `Service Required: ${service}\n` +
-            `Phone: ${phone}\n` +
-            `Email: ${email}\n` +
-            `File Selected: ${fileName}\n\n` +
-            `Additional Notes:\n${notes}\n\n` +
-            `Note: Please attach the Kundali file (${fileName}) before sending this email.`
-        );
-        
-        // Open email client
-        window.location.href = `mailto:astrovidyashukla@gmail.com?subject=${subject}&body=${body}`;
-        
-        // Reset and close after a brief delay
-        setTimeout(() => {
-            kundaliForm.reset();
-            document.querySelector('.file-name').textContent = currentLang === 'en' ? 'No file chosen' : 'कोई फाइल नहीं चुनी गई';
-            closeKundaliModal();
-        }, 500);
-    });
+    // Form submits naturally - no JavaScript intervention
+    // FormSubmit will handle the submission and redirect
+}
+
+// This broken code block is removed
+
+// File Upload Handling - with protection against duplicate initialization
+let fileUploadInitialized = false;
+
+function handleFileUploads() {
+    if (fileUploadInitialized) {
+        console.log('File upload already initialized, skipping...');
+        return;
+    }
     
-    // Handle file upload
-    handleFileUpload();
+    console.log('Initializing file upload...');
+    const fileInput = document.getElementById('kundaliFile');
+    const uploadButton = document.getElementById('uploadButton');
+    const fileNameDisplay = document.getElementById('fileName');
+    
+    if (!fileInput || !uploadButton || !fileNameDisplay) {
+        console.error('Required file upload elements not found!');
+        return;
+    }
+
+    // Make sure the upload button works - using onclick to prevent duplicates
+    uploadButton.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Upload button clicked');
+        fileInput.click();
+    };
+
+    // Handle file selection - using onchange to prevent duplicates
+    fileInput.onchange = function(e) {
+        console.log('File selected:', this.files);
+        if (this.files && this.files[0]) {
+            const file = this.files[0];
+            const maxSize = 10 * 1024 * 1024; // 10MB
+            const allowedTypes = [
+                'application/pdf',
+                'image/jpeg',
+                'image/png',
+                'image/jpg'
+            ];
+            
+            // Check file type
+            if (!allowedTypes.includes(file.type)) {
+                alert(currentLang === 'en' 
+                    ? 'Invalid file type. Please upload PDF, JPG, or PNG files.' 
+                    : 'अमान्य फ़ाइल प्रकार। कृपया PDF, JPG, या PNG फ़ाइलें अपलोड करें।');
+                this.value = '';
+                return;
+            }
+            
+            // Check file size
+            if (file.size > maxSize) {
+                alert(currentLang === 'en'
+                    ? 'File is too large. Maximum size is 10MB.'
+                    : 'फ़ाइल बहुत बड़ी है। अधिकतम आकार 10MB है।');
+                this.value = '';
+                return;
+            }
+
+            // Update UI
+            const fileName = file.name.length > 30 
+                ? file.name.substring(0, 15) + '...' + file.name.substring(file.name.length - 12)
+                : file.name;
+            
+            // Update the display
+            const fileSize = (file.size / (1024 * 1024)).toFixed(2);
+            fileNameDisplay.textContent = `${fileName} (${fileSize} MB)`;
+            fileNameDisplay.style.color = '#10b981';
+            
+            // Update button text
+            const changeBtnText = uploadButton.querySelector('span');
+            if (changeBtnText) {
+                changeBtnText.textContent = currentLang === 'en' ? 'Change File' : 'फ़ाइल बदलें';
+            }
+        }
+    };
+    
+    fileUploadInitialized = true;
+    console.log('✅ File upload handler initialized');
+}
+
+// Form Submission - Contact Form
+function handleFormSubmission() {
+    // Test if forms are being detected
+    const contactForm = document.getElementById('contactForm');
+    const kundaliForm = document.getElementById('kundaliForm');
+    
+    console.log('Contact form found:', contactForm ? 'YES' : 'NO');
+    console.log('Kundali form found:', kundaliForm ? 'YES' : 'NO');
+    
+    if (contactForm) {
+        console.log('Contact form action:', contactForm.action);
+        console.log('Contact form method:', contactForm.method);
+    }
+    
+    if (kundaliForm) {
+        console.log('Kundali form action:', kundaliForm.action);
+        console.log('Kundali form method:', kundaliForm.method);
+    }
+    
+    // Forms submit naturally via HTML - no JavaScript intervention
+    console.log('✅ Forms configured for native HTML submission');
 }
 
 // Call modal listeners in initialize
 function initializeEventListeners() {
+    // Initialize file uploads
+    handleFileUploads();
+    handleFormSubmission();
+    
     // Language toggle
     langToggle.addEventListener('click', () => {
         toggleLanguage();
@@ -541,57 +689,7 @@ function initializeEventListeners() {
         }
     });
     
-    // Contact form submission with Web3Forms
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const messageDiv = document.getElementById('contactFormMessage');
-        const submitButton = contactForm.querySelector('.submit-button');
-        
-        // Show loading state
-        submitButton.disabled = true;
-        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Sending...</span>';
-        
-        try {
-            const formData = new FormData(contactForm);
-            
-            const response = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: formData
-            });
-            
-            const data = await response.json();
-            
-            if (data.success) {
-                // Show success message
-                messageDiv.className = 'form-message success';
-                messageDiv.textContent = currentLang === 'en' 
-                    ? '✅ Thank you! Your message has been sent successfully. We will contact you soon.' 
-                    : '✅ धन्यवाद! आपका संदेश सफलतापूर्वक भेज दिया गया है। हम जल्द ही आपसे संपर्क करेंगे।';
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Hide message after 5 seconds
-                setTimeout(() => {
-                    messageDiv.className = 'form-message';
-                    messageDiv.textContent = '';
-                }, 5000);
-            } else {
-                throw new Error('Form submission failed');
-            }
-        } catch (error) {
-            // Show error message
-            messageDiv.className = 'form-message error';
-            messageDiv.textContent = currentLang === 'en' 
-                ? '❌ Sorry, something went wrong. Please try again or contact us at +91 7905521101' 
-                : '❌ क्षमा करें, कुछ गलत हो गया। कृपया पुनः प्रयास करें या +91 7905521101 पर संपर्क करें';
-        } finally {
-            // Reset button
-            submitButton.disabled = false;
-            submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> <span data-en="Send Message" data-hi="संदेश भेजें">Send Message</span>';
-        }
-    });
+    // Contact form is handled by handleFormSubmission() function above
     
     // Aarti modal close
     aartiModalClose.addEventListener('click', closeAartiModal);
@@ -600,9 +698,6 @@ function initializeEventListeners() {
             closeAartiModal();
         }
     });
-    
-    // Initialize modal listeners
-    initializeModalListeners();
 }
 
 // Aarti Collection
