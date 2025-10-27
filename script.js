@@ -1,3 +1,82 @@
+// Date and Hindu Festival Data
+const hinduFestivals2024_2025 = {
+    '2024-10-26': { en: 'Ahoi Ashtami', hi: 'अहोई अष्टमी' },
+    '2024-10-31': { en: 'Diwali', hi: 'दीपावली' },
+    '2024-11-01': { en: 'Govardhan Puja', hi: 'गोवर्धन पूजा' },
+    '2024-11-02': { en: 'Bhai Dooj', hi: 'भाई दूज' },
+    '2024-11-15': { en: 'Kartik Purnima', hi: 'कार्तिक पूर्णिमा' },
+    '2024-11-15': { en: 'Dev Deepawali', hi: 'देव दीपावली' },
+    '2024-12-23': { en: 'Dhanu Sankranti', hi: 'धनु संक्रांति' },
+    '2025-01-13': { en: 'Lohri', hi: 'लोहड़ी' },
+    '2025-01-14': { en: 'Makar Sankranti', hi: 'मकर संक्रांति' },
+    '2025-01-25': { en: 'Vasant Panchami', hi: 'वसंत पंचमी' },
+    '2025-02-26': { en: 'Maha Shivaratri', hi: 'महाशिवरात्रि' },
+    '2025-03-14': { en: 'Holi', hi: 'होली' },
+    '2025-03-30': { en: 'Ugadi', hi: 'उगादी' },
+    '2025-04-06': { en: 'Ram Navami', hi: 'राम नवमी' },
+    '2025-04-10': { en: 'Mahavir Jayanti', hi: 'महावीर जयंती' },
+    '2025-04-13': { en: 'Baisakhi', hi: 'बैसाखी' },
+    '2025-05-12': { en: 'Buddha Purnima', hi: 'बुद्ध पूर्णिमा' },
+    '2025-06-22': { en: 'Rath Yatra', hi: 'रथ यात्रा' },
+    '2025-08-09': { en: 'Nag Panchami', hi: 'नाग पंचमी' },
+    '2025-08-16': { en: 'Raksha Bandhan', hi: 'रक्षा बंधन' },
+    '2025-08-27': { en: 'Janmashtami', hi: 'जन्माष्टमी' },
+    '2025-09-05': { en: 'Ganesh Chaturthi', hi: 'गणेश चतुर्थी' },
+    '2025-10-02': { en: 'Navratri Begins', hi: 'नवरात्रि प्रारंभ' },
+    '2025-10-11': { en: 'Dussehra', hi: 'दशहरा' },
+    '2025-10-20': { en: 'Karwa Chauth', hi: 'करवा चौथ' }
+};
+
+// Function to update date and festival
+function updateDateAndFestival() {
+    const now = new Date();
+    const dateElement = document.getElementById('currentDate');
+    const festivalElement = document.getElementById('hinduFestival');
+    
+    if (!dateElement || !festivalElement) return;
+    
+    // Format date
+    const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+    const formattedDate = now.toLocaleDateString('en-US', options);
+    dateElement.textContent = formattedDate;
+    
+    // Check for Hindu festival
+    const dateKey = now.toISOString().split('T')[0]; // Format: YYYY-MM-DD
+    
+    if (hinduFestivals2024_2025[dateKey]) {
+        const festival = hinduFestivals2024_2025[dateKey];
+        const festivalText = currentLang === 'hi' ? festival.hi : festival.en;
+        festivalElement.textContent = festivalText;
+        festivalElement.style.display = 'block';
+    } else {
+        // Check upcoming festival within 7 days
+        const upcomingFestival = findUpcomingFestival(now);
+        if (upcomingFestival) {
+            const festivalText = currentLang === 'hi' 
+                ? `आगामी: ${upcomingFestival.festival.hi}` 
+                : `Upcoming: ${upcomingFestival.festival.en}`;
+            festivalElement.textContent = festivalText;
+            festivalElement.style.display = 'block';
+        } else {
+            festivalElement.style.display = 'none';
+        }
+    }
+}
+
+// Find upcoming festival within 7 days
+function findUpcomingFestival(currentDate) {
+    const sevenDaysLater = new Date(currentDate);
+    sevenDaysLater.setDate(currentDate.getDate() + 7);
+    
+    for (const [dateStr, festival] of Object.entries(hinduFestivals2024_2025)) {
+        const festivalDate = new Date(dateStr);
+        if (festivalDate > currentDate && festivalDate <= sevenDaysLater) {
+            return { date: festivalDate, festival: festival };
+        }
+    }
+    return null;
+}
+
 // Zodiac data with English and Hindi content
 const zodiacData = [
     {
@@ -210,6 +289,10 @@ const aartiText = document.getElementById('aartiText');
 document.addEventListener('DOMContentLoaded', () => {
     generateZodiacCards();
     initializeEventListeners();
+    updateDateAndFestival();
+    
+    // Update date every minute
+    setInterval(updateDateAndFestival, 60000);
 });
 
 // Generate Zodiac Cards
@@ -287,6 +370,9 @@ function toggleLanguage() {
     
     // Regenerate zodiac cards
     generateZodiacCards();
+    
+    // Update date and festival display
+    updateDateAndFestival();
 }
 
 // Smooth Scroll
@@ -364,7 +450,7 @@ function initializeModalListeners() {
         
         // Get form values
         const fullName = document.getElementById('fullName').value;
-        const dob = document.getElementById('dob').value;
+        const birthDate = document.getElementById('birthDate').value;
         const birthTime = document.getElementById('birthTime').value;
         const birthPlace = document.getElementById('birthPlace').value;
         const service = document.getElementById('serviceSelect').value;
@@ -373,12 +459,24 @@ function initializeModalListeners() {
         const notes = document.getElementById('additionalNotes').value;
         const fileName = document.getElementById('kundaliFile').files[0]?.name || 'No file selected';
         
+        // Validate birth date
+        const birthDateObj = new Date(birthDate);
+        const minDate = new Date('1900-01-01');
+        const maxDate = new Date('2025-12-31');
+        
+        if (birthDateObj < minDate || birthDateObj > maxDate) {
+            alert(currentLang === 'en' 
+                ? 'Please enter a valid birth date between 1900 and 2025' 
+                : 'कृपया 1900 और 2025 के बीच एक वैध जन्म तिथि दर्ज करें');
+            return;
+        }
+        
         // Create mailto link with all data
         const subject = encodeURIComponent('Kundali Upload Request - AstroVidya');
         const body = encodeURIComponent(
             `KUNDALI UPLOAD REQUEST\n\n` +
             `Full Name: ${fullName}\n` +
-            `Date of Birth: ${dob}\n` +
+            `Date of Birth: ${birthDate}\n` +
             `Time of Birth: ${birthTime}\n` +
             `Place of Birth: ${birthPlace}\n` +
             `Service Required: ${service}\n` +

@@ -28,6 +28,10 @@
                 <li><a href="#about" class="nav-link" data-en="About" data-hi="परिचय">About</a></li>
                 <li><a href="#contact" class="nav-link" data-en="Contact" data-hi="संपर्क">Contact</a></li>
             </ul>
+            <div class="date-festival-container">
+                <div class="current-date" id="currentDate"></div>
+                <div class="hindu-festival" id="hinduFestival"></div>
+            </div>
             <button class="lang-toggle" id="langToggle">
                 <i class="fas fa-language"></i>
                 <span class="lang-text">हिंदी</span>
@@ -399,22 +403,22 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label data-en="Full Name" data-hi="पूरा नाम">Full Name</label>
-                        <input type="text" placeholder="Enter your name / अपना नाम दर्ज करें" required>
+                        <input type="text" id="fullName" placeholder="Enter your name / अपना नाम दर्ज करें" required>
                     </div>
                     <div class="form-group">
                         <label data-en="Date of Birth" data-hi="जन्म तिथि">Date of Birth</label>
-                        <input type="date" required>
+                        <input type="date" id="birthDate" min="1900-01-01" max="2025-12-31" required>
                     </div>
                 </div>
                 
                 <div class="form-row">
                     <div class="form-group">
                         <label data-en="Time of Birth" data-hi="जन्म समय">Time of Birth</label>
-                        <input type="time" required>
+                        <input type="time" id="birthTime" required>
                     </div>
                     <div class="form-group">
                         <label data-en="Place of Birth" data-hi="जन्म स्थान">Place of Birth</label>
-                        <input type="text" placeholder="City, State / शहर, राज्य" required>
+                        <input type="text" id="birthPlace" placeholder="City, State / शहर, राज्य" required>
                     </div>
                 </div>
                 
@@ -445,17 +449,17 @@
                 
                 <div class="form-group">
                     <label data-en="Phone Number" data-hi="फोन नंबर">Phone Number</label>
-                    <input type="tel" placeholder="+91 XXXXX XXXXX" required>
+                    <input type="tel" id="userPhone" placeholder="+91 XXXXX XXXXX" required>
                 </div>
                 
                 <div class="form-group">
                     <label data-en="Email Address" data-hi="ईमेल पता">Email Address</label>
-                    <input type="email" placeholder="your@email.com" required>
+                    <input type="email" id="userEmail" placeholder="your@email.com" required>
                 </div>
                 
                 <div class="form-group">
                     <label data-en="Additional Information" data-hi="अतिरिक्त जानकारी">Additional Information</label>
-                    <textarea rows="4" placeholder="Any specific questions or concerns / कोई विशिष्ट प्रश्न या चिंता"></textarea>
+                    <textarea id="additionalNotes" rows="4" placeholder="Any specific questions or concerns / कोई विशिष्ट प्रश्न या चिंता"></textarea>
                 </div>
                 
                 <button type="submit" class="modal-submit-btn">
