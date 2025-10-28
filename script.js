@@ -1135,6 +1135,137 @@ function copyUPI() {
     });
 }
 
+// ============================================
+// 🔒 COPY PROTECTION - Prevents Content Theft
+// ============================================
+
+// Disable keyboard shortcuts for copying, saving, printing, inspect element
+document.addEventListener('keydown', function(e) {
+    // Disable Ctrl+C, Cmd+C (Copy)
+    if ((e.ctrlKey || e.metaKey) && e.key === 'c') {
+        e.preventDefault();
+        return false;
+    }
+    
+    // Disable Ctrl+X, Cmd+X (Cut)
+    if ((e.ctrlKey || e.metaKey) && e.key === 'x') {
+        e.preventDefault();
+        return false;
+    }
+    
+    // Disable Ctrl+A, Cmd+A (Select All)
+    if ((e.ctrlKey || e.metaKey) && e.key === 'a') {
+        e.preventDefault();
+        return false;
+    }
+    
+    // Disable Ctrl+S, Cmd+S (Save)
+    if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+        e.preventDefault();
+        return false;
+    }
+    
+    // Disable Ctrl+P, Cmd+P (Print)
+    if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+        e.preventDefault();
+        return false;
+    }
+    
+    // Disable Ctrl+U, Cmd+U (View Source)
+    if ((e.ctrlKey || e.metaKey) && e.key === 'u') {
+        e.preventDefault();
+        return false;
+    }
+    
+    // Disable F12, Ctrl+Shift+I, Cmd+Option+I (Inspect Element)
+    if (e.key === 'F12' || 
+        ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'I') ||
+        ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'i')) {
+        e.preventDefault();
+        return false;
+    }
+    
+    // Disable Ctrl+Shift+J, Cmd+Option+J (Console)
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'J' || e.key === 'j')) {
+        e.preventDefault();
+        return false;
+    }
+    
+    // Disable Ctrl+Shift+C, Cmd+Option+C (Inspect)
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'C') {
+        e.preventDefault();
+        return false;
+    }
+});
+
+// Disable copy event
+document.addEventListener('copy', function(e) {
+    e.preventDefault();
+    return false;
+});
+
+// Disable cut event
+document.addEventListener('cut', function(e) {
+    e.preventDefault();
+    return false;
+});
+
+// Disable paste (optional - uncomment if needed)
+// document.addEventListener('paste', function(e) {
+//     e.preventDefault();
+//     return false;
+// });
+
+// Disable print
+window.addEventListener('beforeprint', function(e) {
+    e.preventDefault();
+    return false;
+});
+
+// Disable screenshot detection (some browsers)
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    return false;
+});
+
+// Detect and prevent developer tools
+let devToolsOpen = false;
+const detectDevTools = () => {
+    const threshold = 160;
+    if (window.outerWidth - window.innerWidth > threshold || 
+        window.outerHeight - window.innerHeight > threshold) {
+        if (!devToolsOpen) {
+            devToolsOpen = true;
+            document.body.innerHTML = '<div style="display:flex; justify-content:center; align-items:center; height:100vh; font-size:24px; color:#fff; background:#1a1a40;">⚠️ Developer tools detected. Please close to continue.</div>';
+        }
+    }
+};
+
+// Check for dev tools every 1 second
+setInterval(detectDevTools, 1000);
+
+// Disable text selection via CSS will be added
+document.body.style.userSelect = 'none';
+document.body.style.webkitUserSelect = 'none';
+document.body.style.mozUserSelect = 'none';
+document.body.style.msUserSelect = 'none';
+
+// Disable drag and drop
+document.addEventListener('dragstart', function(e) {
+    e.preventDefault();
+    return false;
+});
+
+// Add copyright watermark to console
+console.log('%c⚠️ COPYRIGHT PROTECTED', 'color: red; font-size: 20px; font-weight: bold;');
+console.log('%c© 2025 AstroVidya | आकाशीय विद्या', 'color: gold; font-size: 16px;');
+console.log('%c🔒 All content is protected. Unauthorized copying is prohibited.', 'color: orange; font-size: 14px;');
+console.log('%cContact: astrovidyashukla@gmail.com | +91 7905521101', 'color: white; font-size: 12px;');
+
+// ============================================
+// END OF COPY PROTECTION
+// ============================================
+
 // Expose functions globally
 window.scrollToSection = scrollToSection;
 window.openKundaliModal = openKundaliModal;

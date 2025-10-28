@@ -3,6 +3,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* 🔒 Copy Protection: Disable text selection */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* Disable image dragging */
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    user-drag: none;
 }
 
 :root {
@@ -899,19 +908,30 @@ section {
 
 .contact-form input,
 .contact-form select,
-.contact-form textarea {
+.contact-form textarea,
+.kundali-form input,
+.kundali-form select,
+.kundali-form textarea {
     background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 215, 0, 0.3);
-    border-radius: 10px;
-    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 15px;
     color: var(--text-light);
+    border-radius: 8px;
     font-size: 1rem;
+    width: 100%;
     transition: all 0.3s ease;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus,
+.kundali-form input:focus,
+.kundali-form select:focus,
+.kundali-form textarea:focus,
 .contact-form .file-upload:focus-within {
     outline: none;
     border-color: var(--accent-gold);
