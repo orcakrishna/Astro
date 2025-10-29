@@ -16,8 +16,6 @@
                 <i class="fas fa-moon"></i>
                 <span class="logo-text">
                     <span class="logo-en">AstroVidya</span>
-                    <span class="logo-divider">|</span>
-                    <span class="logo-hi">आकाशीय विद्या</span>
                 </span>
             </div>
             <ul class="nav-links">
@@ -411,11 +409,12 @@
             <h2 class="modal-title" data-en="Upload Your Kundali" data-hi="अपनी कुंडली अपलोड करें">Upload Your Kundali</h2>
             <p class="modal-subtitle" data-en="Get personalized astrological insights" data-hi="व्यक्तिगत ज्योतिषीय अंतर्दृष्टि प्राप्त करें">Get personalized astrological insights</p>
             
-            <form class="kundali-form" id="kundaliForm" action="https://formsubmit.co/8286c464c74786a7107b4d62d5b03a2a" method="POST" enctype="multipart/form-data">
+            <form class="kundali-form" id="kundaliForm" action="https://formsubmit.co/astrovidyashukla@gmail.com" method="POST" enctype="multipart/form-data">
                 <!-- FormSubmit Configuration -->
                 <input type="hidden" name="_subject" value="Kundali Upload Request - AstroVidya">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_autoresponse" value="Thank you for submitting your Kundali. We will contact you soon!">
                 <input type="hidden" name="_next" value="https://orcakrishna.github.io/Astro/thank-you.html">
                 
                 <div class="form-group">
@@ -463,7 +462,7 @@
                 </div>
                 
                 <div class="form-group">
-                    <label data-en="Upload Kundali (PDF, JPG, PNG, max 10MB)" data-hi="कुंडली अपलोड करें (PDF, JPG, PNG, अधिकतम 10MB)">Upload Kundali (PDF, JPG, PNG, max 10MB)</label>
+                    <label data-en="Upload Kundali (Optional)" data-hi="कुंडली अपलोड करें (वैकल्पिक)">Upload Kundali (Optional)</label>
                     <div class="file-upload-container">
                         <input type="file" id="kundaliFile" name="attachment" accept=".pdf,.jpg,.jpeg,.png" style="display: none;">
                         <button type="button" id="uploadButton" class="upload-button">
@@ -472,7 +471,7 @@
                         </button>
                         <span id="fileName" class="file-name" data-en="No file chosen" data-hi="कोई फ़ाइल नहीं चुनी गई">No file chosen</span>
                     </div>
-                    <p class="file-upload-hint" data-en="Supports: PDF, JPG, PNG up to 10MB" data-hi="समर्थित: PDF, JPG, PNG, अधिकतम 10MB">Supports: PDF, JPG, PNG up to 10MB</p>
+                    <p class="file-upload-hint" data-en="Optional: PDF, JPG, PNG up to 10MB" data-hi="वैकल्पिक: PDF, JPG, PNG, अधिकतम 10MB">Optional: PDF, JPG, PNG up to 10MB</p>
                 </div>
                 
                 <div class="form-group">
